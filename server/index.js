@@ -10,6 +10,15 @@ const config = require('dotenv').config()
 const TOKEN = process.env.TWITTER_BEARER_TOKEN
 const PORT = process.env.PORT || 3000
 
+const app = express()
+
+const server = http.createServer(app)
+const io = socketIo(server)
+
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../', 'client', 'index.html'))
+})
+
 const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules'
 const streamURL = 'https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics&expansions=author_id'
 
@@ -64,7 +73,7 @@ async function deleteRules(rules) {
     return response.body
 }
 
-function streamTweets() {
+function streamTweets(socket) {
     const stream = needle.get(streamURL, {
         headers: {
             Authorization: `Bearer ${TOKEN}`
@@ -74,17 +83,20 @@ function streamTweets() {
     stream.on('data', (data) => {
         try {
             const json = JSON.parse(data)
-            console.log(json)
+            // console.log(json)
+            socket.emit('tweet', json)
         } catch (error) {
             
         }
     })
 }
 
+io.on('connection', async () => {
+    console.log('Client connected...')
 
-(async () => {
-    let currentRules
+        let currentRules
     // Get all current stream rules
+
     try {
         currentRules = await getRules()
 
@@ -98,5 +110,9 @@ function streamTweets() {
         process.exit(1)
     }
 
-    streamTweets()
-})()
+    streamTweets(io)
+
+})
+
+
+server.listen(PORT, () => console.log(`Listening on Port ${PORT}`))
