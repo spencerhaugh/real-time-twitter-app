@@ -1,3 +1,7 @@
+// Thank you to Brad Traversy for the inspiration to create this app!
+// https://www.youtube.com/watch?v=PjjjhGW4ceM
+ 
+
 const needle = require('needle');
 const config = require('dotenv').config()
 const TOKEN = process.env.TWITTER_BEARER_TOKEN
