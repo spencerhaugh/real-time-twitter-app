@@ -1,13 +1,17 @@
 // Thank you to Brad Traversy for the inspiration to create this app!
 // https://www.youtube.com/watch?v=PjjjhGW4ceM
- 
 
+const http = require('http')
+const path = require('path')
+const express = require('express')
+const socketIo = require('socket.io')
 const needle = require('needle');
 const config = require('dotenv').config()
 const TOKEN = process.env.TWITTER_BEARER_TOKEN
+const PORT = process.env.PORT || 3000
 
 const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules'
-const streamURL = 'https://api.twitter.com/2/tweets/search/stream?tweet.field=public_metrics&expansions=author_id'
+const streamURL = 'https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics&expansions=author_id'
 
 const rules = [{ value: '#askslowride' }]
 
@@ -60,6 +64,24 @@ async function deleteRules(rules) {
     return response.body
 }
 
+function streamTweets() {
+    const stream = needle.get(streamURL, {
+        headers: {
+            Authorization: `Bearer ${TOKEN}`
+        }
+    })
+
+    stream.on('data', (data) => {
+        try {
+            const json = JSON.parse(data)
+            console.log(json)
+        } catch (error) {
+            
+        }
+    })
+}
+
+
 (async () => {
     let currentRules
     // Get all current stream rules
@@ -75,4 +97,6 @@ async function deleteRules(rules) {
         console.log(error)
         process.exit(1)
     }
+
+    streamTweets()
 })()
