@@ -1,12 +1,19 @@
-img {
-    max-width: 80%;
-    /* margin: 0 auto; */
-}
-.img {
-    display: flex;
-    justify-content: center;
+body {
+    background-color: #eee;
 }
 .banner {
-    display: flex;
-    justify-content: center;
+    height: 35vh;
+    width: 100vw;
+
+}
+.banner .banner-image {
+    background-image: url('https://wideanglepodium.com/wp-content/uploads/2021/05/dogetracker-01.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.tweetStream .tweet {
+    background-color: rgba(173, 216, 230, .7);
+    box-shadow: (2px, 2px, 8px rgba(0,0,0,.6));
 }

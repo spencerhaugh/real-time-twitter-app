@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./style.css"> -->
     <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link 
         rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" 
     />    
-    <title>Hashtag #CXWorlds</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Hashtag #Dogecoin Watch</title>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href="#" class="navbar-brand">The #Dogecoin Hashtag Live Ticker Big Board</a> Presented by Spencer Haugh
+            <a href="#" class="navbar-brand">The #Dogecoin Hashtag Watch Live Tickr Big Board</a> Presented by Spencer Haugh
         </div>
     </nav>
-    <div class='banner' style="display: flex; justify-content: center;">
-        <img src="https://wideanglepodium.com/wp-content/uploads/2021/05/dogetracker-01.svg" alt="Presented by Spencer Haugh banner" style="max-width: 80%; max-height: 35vh;">
+
+    <div class='banner' >
+        <div class="banner-image" alt="Presented by Spencer Haugh banner">
     </div>
-    
 
     <div class="container">
         <div id="tweetStream"></div>
@@ -49,7 +49,7 @@
             }
 
             const tweetEl = document.createElement('div')
-            tweetEl.className = 'card my-4'
+            tweetEl.className = 'card my-4 tweet'
             tweetEl.innerHTML = `
             <div class="card-body">
                 <h5 class="card-title"> ${tweetData.text}</h5>
