@@ -1,18 +1,21 @@
 # Realtime Twitter API App
 
-## Custom Twitter Application For the 2021 UCI Cyclocross World Championships event:
+## Why not $DOGE?
 
-This application utilizes the Twitter API to search for and return any tweet containing the hashtag #cxworlds, and displays them on a SPA. App is deployed online via Heroku.
+This application utilizes the Twitter API to continuously search for and return any tweet containing the hashtag #dogecoin, and displays them on a SPA. App is deployed online via Heroku.
 
 Heroku Deployment Link: [Live Site](https://dry-temple-34762.herokuapp.com/)
 
-This application uses socket.io to pass information that the Node/Express backend server recieves from Twitter's API to the front end. It then renders this data to the DOM as tweets happen in real time.
+This application uses socket.io to pass information that the Node/Express backend server recieves from Twitter's API to the vanilla front end. It then renders this data to the DOM as tweets happen in real time. The API is requested via Needle.
 
-The event is over, so it is unlikely more teets will be coming in, but it worked as intended in real time. Sceen captures will be included here soon.
+Some minimal styling for the tweets has been added via Bootstrap.
+
+Also, I made the sweet header svg image myself in Adobe Illustrator, because I have many talents. :)
 
 ## Technologies
 
 Javascript
-Node.js and Express backend
+Node.js & Express backend
 Socket.io
 Twitter API
+Needle
