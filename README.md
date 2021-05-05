@@ -2,7 +2,7 @@
 
 ## Why not $DOGE?
 
-This application utilizes the Twitter API to continuously search for and return any tweet containing the hashtag #dogecoin, and displays them on a SPA. App is deployed online via Heroku.
+This small & simple, but powerful application utilizes the Twitter API to continuously search for and return any tweet containing the hashtag #dogecoin, and displays them on a SPA. App is deployed online via Heroku.
 
 Heroku Deployment Link: [Live Site](https://dry-temple-34762.herokuapp.com/)
 
@@ -14,8 +14,10 @@ Also, I made the sweet header svg image myself in Adobe Illustrator, because I h
 
 ## Technologies
 
-Javascript
-Node.js & Express backend
-Socket.io
-Twitter API
-Needle
+Javascript  
+HTML  
+CSS & Bootstrap    
+Node.js & Express backend  
+Socket.io  
+Twitter API  
+Needle  
