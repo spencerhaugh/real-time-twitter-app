@@ -12,6 +12,8 @@ Some minimal styling for the tweets has been added via Bootstrap.
 
 Also, I made the sweet header svg image myself in Adobe Illustrator, because I have many talents. :)
 
+This project is based on a project by Traversy Media.
+
 ## Technologies
 
 Javascript  
